@@ -16,15 +16,15 @@ int main()
 	float answer[n] ;
 	//for input
 	/*
-	for(int i = 0 ; i < n ; i ++)
+	for( i = 0 ; i < n ; i ++)
 	{
 		cout << "Please enter the " << i+1 << " equation" ;
-		for(int j = 0 ; j < n ; j ++)
+		for( j = 0 ; j < n ; j ++)
 			cin >> matrix[i][j] ;
 		cin >> matrix[i][n];
 	}
 	*/
-	for(int i = 0 ; i < n ; i ++)
+	for( i = 0 ; i < n ; i ++)
 	{
 		if(matrix[i][i] ==0)
 		{
@@ -37,7 +37,7 @@ int main()
 				return 0 ;
 			}
 			cout << j ;
-			for(int k = 0 ; k < n+1 ; k ++)
+			for( k = 0 ; k < n+1 ; k ++)
 			{
 				Q[k] = matrix[i][k];
 				matrix[i][k] = matrix[j][k];
@@ -45,17 +45,17 @@ int main()
 
 			}
 		}
-		for(int j = 0 ; j < n ; j ++)
+		for( j = 0 ; j < n ; j ++)
 			if(i != j)
 			{
 				A = matrix[j][i]/matrix[i][i];
-				for(int k = 0 ; k < n+1 ; k ++)
+				for( k = 0 ; k < n+1 ; k ++)
 					matrix[j][k] = ((-1)*(A)) * matrix[i][k] + matrix[j][k];
 			}
 	}
 
-	for(int i = 0 ; i < n ; i ++)
-		for(int j = 0 ; j < n ; j ++)
+	for( i = 0 ; i < n ; i ++)
+		for( j = 0 ; j < n ; j ++)
 			answer[i] = matrix[i][n]/matrix[i][i];
 	cout << "x = " << answer[0] << endl ;
 	cout << "y = " << answer[1] << endl ;

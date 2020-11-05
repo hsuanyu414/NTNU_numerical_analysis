@@ -5,7 +5,8 @@ using namespace std;
 double horner(double num)
 {
     double answer = num;
-    for(int i = 0 ; i < 49; i ++)
+    int i = 0 ;
+    for(i = 0 ; i < 49; i ++)
     {
         answer += 1 ;
         answer *= num ;
