@@ -1,61 +1,45 @@
+#include <iostream>
 #include <stdio.h>
-#define n 4
+
+using namespace std ;
+
+#define N 4
+
 /*
 1800 280
 1850 283
 1900 291
-1950 ???
 2000 370
 */
 
 int main()
 {
-int i = 0,j = 0;
-
-double x[n] = {1800,1850,1900,2000} ;
-double y[n] = {280,283,291,370};
-
-double P = 0;//ans_y
-
-double ans_x = 1950;
-
-double array[n][n] = {0};
-
-for(i = 0; i < n; i++)
-{
-array[0][i] = y[i];
-}
-
-for(j = 1;j < n ; j++)
-{
-for(i = 0;i < n - j; i++)
-{
-array[j][i] = (array[j - 1][i + 1] - array[j - 1][i]) / (x[i + j] - x[i]);
-}
-}
-/*
-for(i = 0;i < n; i++)
-{
-for(j = 0 ; j < n; j++)
-{
-printf("%lf\t",array[j][i]);
-}
-printf("\n");
-}
-*/
-for(i = 0; i < n ; i++)
-{
-double tmp = 0;
-tmp = array[i][0];
-for(j = 0 ; j < i; j++)
-{
-tmp = tmp * (ans_x - x[j]);
-}
-P += tmp;
-}
-
-printf("%lf",P);
-
-//for(i = 0;i < n; i++)
-//printf("%lf",array[i][0]);
+	float x[N] = {-1,0,1,2} ;
+	float ans_x = 0 ;
+	int i,j = 0 ;
+	float _1 = 1 ;
+	float _2 = 1 ;
+	float _3 = 2 ;
+	float _4 = 0 ;
+	float _12 = (_2-_1)/(x[1]-x[0]);
+	float _23 = (_3-_2)/(x[2]-x[1]);
+	float _34 = (_4-_3)/(x[3]-x[2]);
+	float _123 = (_23-_12)/(x[2]-x[0]);
+	float _234 = (_34-_23)/(x[3]-x[1]);
+	float _1234 = (_234-_123)/(x[3]-x[0]);
+	cout << _34 << endl ;
+	float ans_y = 0 ;
+	ans_y += _1;
+	ans_y += _12*(ans_x-x[0]);
+	ans_y += _123*(ans_x-x[0])*(ans_x-x[1]);
+	ans_y += _1234*(ans_x-x[0])*(ans_x-x[1])*(ans_x-x[2]);
+	
+	
+	float _ans = ((_1234*(ans_x-x[2])+_123)*(ans_x-x[1])+_12)*(ans_x-x[0])+_1 ;
+	
+	printf("%f",ans_y);
+	
+	printf("%f",_ans);
+		
+	return 0 ;
 }

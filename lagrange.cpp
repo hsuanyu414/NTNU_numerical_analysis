@@ -1,16 +1,16 @@
 #include <iostream>
 #include <stdio.h>
 
-#define N 4
+#define N 11
 
 using namespace std ;
 
 int main()
 {
-	double x[N] = {1960,1970,1990,2000};
-	double y[N] = {3039585530,3707475887,5281653820,6079603571};
+	double x[N] = {-5,-4,-3,-2,-1,0,1,2,3,4,5};
+	double y[N] = { 5, 5, 5, 5, 5,5,5,5,5,5,42};
 	//guess 1980 ;
-	double x_ = 1980 ;
+	double x_ = 6 ;
 	double y_ = 0 ;
 
 	for(int i = 0 ; i < N ; i ++)

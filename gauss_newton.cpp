@@ -12,19 +12,19 @@ Circle 3: ( 1, -1) R = 1
 int main()
 {
 	double cp[3][2]= {
-		{-1 ,  0 },
-		{ 1 ,  1 },
-		{ 1 , -1 }
+		{ 2 ,  1 },
+		{ 5 ,  3 },
+		{ 5 , -3 }
 	};
 
 	double x0[2] = { 0 , 0 } ; // 初始猜測向量 [x0,y0]T
 	double x1[2] = { 0 , 0 } ; // 之後的向量　 [xi,ti]T
-	double r_[3] = {1,1,1} ;
+	double r_[3] = {1,2,1} ;
 	double ans[2] = { 0 , 0} ;
 	int time ;
 	int n = 2 ;
 	int i,j,k ;
-	for( time = 0 ; time < 10 ; time ++)
+	for( time = 0 ; time < 1000 ; time ++)
 	{
 		double DrxkT[2][3] = { 0 } ;
 		double Drxk[3][2]  = { 0 } ;
